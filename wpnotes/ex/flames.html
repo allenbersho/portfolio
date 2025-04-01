@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flames</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: pink;
+            height: 100vh;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        input {
+            padding: 5px;
+            width: 50%;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FLAMES</h1>
+            <label for="name1">Name 1:</label>
+            <input type="text" name="name1" id="name1" required>
+            <br><br>
+            <label for="name2">Name 2:</label>
+            <input type="text" name="name2" id="name2" required>
+            <br><br>
+            <button type="submit">Calculate</button>
+            <div>
+                <h2>Result:</h2>
+                <p id="result"></p>
+            </div>
+    </div>
+</body>
+<script>
+            document.querySelector('button').addEventListener('click', function() {
+                var name1 = document.getElementById('name1').value.toLowerCase().replace(/\s+/g, '');
+                var name2 = document.getElementById('name2').value.toLowerCase().replace(/\s+/g, '');
+                
+                if (name1 === '' || name2 === '') {
+                    document.getElementById('result').innerText = 'Please enter both names.';
+                    return;
+                }
+
+                for (var i = 0; i < name1.length; i++) {
+                    var char = name1[i];
+                    if (name2.includes(char)) {
+                        name1 = name1.replace(char, '');
+                        name2 = name2.replace(char, '');
+                        i--; 
+                    }
+                }
+
+                var count = name1.length + name2.length;
+
+                var flames = ['Friends', 'Love', 'Affection', 'Marriage', 'Enemy', 'Siblings'];
+                var index = 0;
+
+                while (flames.length > 1) {
+                    index = (index + count - 1) % flames.length;
+                    flames.splice(index, 1);
+                }
+
+                document.getElementById('result').innerText = flames[0];
+    });
+</script>
+</html>

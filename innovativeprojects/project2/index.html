@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure full viewport height */
+            background: linear-gradient(to bottom, #2c053b, #111111);
+            margin: 0; /* Remove default body margin */
+        }
+        
+        .board {
+            display: grid;
+            /* Use min to make the board size relative to the smaller dimension of the viewport */
+            grid-template-columns: repeat(8, min(10vw, 10vh));
+            grid-template-rows: repeat(8, min(10vw, 10vh));
+            border: 5px solid rgb(44, 39, 43);
+            border-radius: 12px;
+            gap: 2px;
+            max-width: 80vh; /* prevent from being too large on wide screens */
+            max-height: 80vw;
+        }
+
+        .square {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Use min for font size to scale with square size */
+            font-size: min(4vw, 4vh);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .dark {
+            background: linear-gradient(to bottom, #cc23b5, #4e0e61);
+        }
+        .dark:hover {
+            background: linear-gradient(to bottom, #cc23b5, #4e0e61);
+        }
+
+        .light {
+            background-color: #eeeed2;
+        }
+
+        .highlight {
+            border: 2px solid rgb(233, 203, 250);
+        }
+
+        .scoreboard {
+            display: flex;
+            justify-content: space-around;
+            width: 300px;
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="scoreboard">
+        <div>White Captured: <span id="whiteOut">0</span></div>
+        <div>Black Captured: <span id="blackOut">0</span></div>
+    </div>
+    <div class="board" id="chessboard"></div>
+    <script>
+        const board = document.getElementById("chessboard");
+        const whiteOutDisplay = document.getElementById("whiteOut");
+        const blackOutDisplay = document.getElementById("blackOut");
+        let whiteOut = 0, blackOut = 0;
+
+        const pieces = {
+            'r': '♜', 'n': '♞', 'b': '♝', 'q': '♛', 'k': '♚', 'p': '♟',
+            'R': '♖', 'N': '♘', 'B': '♗', 'Q': '♕', 'K': '♔', 'P': '♙'
+        };
+
+        const initialBoard = [
+            "RNBQKBNR",
+            "PPPPPPPP",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "pppppppp",
+            "rnbqkbnr"
+        ];
+
+        function createBoard() {
+            for (let row = 0; row < 8; row++) {
+                for (let col = 0; col < 8; col++) {
+                    const square = document.createElement("div");
+                    square.classList.add("square", (row + col) % 2 === 0 ? "light" : "dark");
+                    square.dataset.row = row;
+                    square.dataset.col = col;
+                    let piece = initialBoard[row][col];
+                    if (piece !== ' ') square.textContent = pieces[piece];
+                    square.addEventListener("click", onSquareClick);
+                    board.appendChild(square);
+                }
+            }
+        }
+
+        let selectedSquare = null;
+
+        function getPieceColor(piece) {
+            return piece && piece.charCodeAt(0) >= 9812 && piece.charCodeAt(0) <= 9817 ? "white" :
+                   piece && piece.charCodeAt(0) >= 9818 && piece.charCodeAt(0) <= 9823 ? "black" : null;
+        }
+
+        function onSquareClick(event) {
+            const square = event.target;
+            if (!selectedSquare) {
+                if (square.textContent.trim() !== "") {
+                    selectedSquare = square;
+                    selectedSquare.classList.add("highlight");
+                }
+            } else {
+                const selectedPieceColor = getPieceColor(selectedSquare.textContent);
+                const targetPieceColor = getPieceColor(square.textContent);
+
+                if (selectedSquare === square) {
+                    selectedSquare.classList.remove("highlight");
+                    selectedSquare = null;
+                    return;
+                }
+
+                if (square.textContent.trim() === "" || selectedPieceColor !== targetPieceColor) {
+                    if (targetPieceColor === "white") {
+                        whiteOut++;
+                        whiteOutDisplay.textContent = whiteOut;
+                    } else if (targetPieceColor === "black") {
+                        blackOut++;
+                        blackOutDisplay.textContent = blackOut;
+                    }
+
+                    square.textContent = selectedSquare.textContent;
+                    selectedSquare.textContent = "";
+                }
+
+                selectedSquare.classList.remove("highlight");
+                selectedSquare = null;
+            }
+        }
+
+        createBoard();
+    </script>
+</body>
+</html>

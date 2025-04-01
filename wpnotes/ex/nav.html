@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            gap: 40px;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .ele {
+            padding: 10px;
+            position: relative;
+        }
+
+        .ele:hover {
+            background-color: #555;
+            color: rgb(0, 125, 228);
+            cursor: pointer;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: #444;
+            padding: 10px 0;
+            border-radius: 4px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .ele:hover .dropdown {
+            display:block;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .dropdown a:hover {
+            background-color: #555;
+        }
+
+        .bottom {
+            background-color: #f4f4f4;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="ele">Home</div>
+            <div class="ele">
+                Services
+                <div class="dropdown">
+                    <a href="#">Web Design</a>
+                    <a href="#">SEO</a>
+                    <a href="#">Marketing</a>
+                </div>
+            </div>
+            <div class="ele">About</div>
+            <div class="ele">Contact</div>
+            <div class="ele">Help</div>
+        </div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>

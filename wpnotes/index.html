@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Preview</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    <div class="container">
+        <div class="header">
+            <h1>Code<span>Canvas</span></h1>
+            <div class="selectors">
+                <select id="exerciseSelector">
+                    <option value="">Select Exercise</option>
+                    <option value="ex1">Exercise 1</option>
+                    <option value="ex2">Exercise 2</option>
+                    <option value="ex3">Exercise 3</option>
+                    <option value="ex4">Exercise 4</option>
+                    <option value="ex5">Exercise 5</option>
+                    <option value="ex6">Exercise 6</option>
+                </select>
+                <select id="codeSelector" disabled>
+                    <option value="">Select Example</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="editor-container">
+            <div class="editor-section glass">
+                <div class="editor-tabs">
+                    <button class="tab-btn active" data-tab="html">HTML</button>
+                    <button class="tab-btn" data-tab="css">CSS</button>
+                    <button class="tab-btn" data-tab="js">JS</button>
+                </div>
+                <pre id="htmlDisplay" class="code-display active"><code class="language-html"></code></pre>
+                <pre id="cssDisplay" class="code-display"><code class="language-css"></code></pre>
+                <pre id="jsDisplay" class="code-display"><code class="language-javascript"></code></pre>
+            </div>
+
+            <div class="preview-section glass">
+                <div class="preview-header">
+                    <h3>Live Preview</h3>
+                    <div class="window-controls">
+                        <span class="control red"></span>
+                        <span class="control yellow"></span>
+                        <span class="control green"></span>
+                    </div>
+                </div>
+                <iframe id="preview"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

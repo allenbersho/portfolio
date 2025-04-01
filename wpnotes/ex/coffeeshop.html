@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Meow+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Meow+Script&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #494039;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            filter: blur(5px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            
+        }
+
+        .contain {
+            border: 2px solid #DACABD;
+            background-color: #DACABD;
+            flex: 1;
+        }
+
+        .contains {
+            border: 2px solid #494039;
+            background-color: #494039;
+            flex: 1;
+        }
+
+        .center-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 900px;
+            height: auto;
+            min-height: 60%;
+            background-image: url("coffee.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .logoport {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            gap: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #494039;
+            text-decoration: none;
+            font-size: 1rem;
+
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logos {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .search {
+            border-radius: 43px;
+            padding: 8px 15px;
+            border: 2px solid #49403941;
+            width: 100%;
+            max-width: 200px;
+            font-size: 1rem;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+            color: #44240a;
+            border-radius: 10px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .menu-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .theme {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .theme-moto {
+            color: #352010;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 10px;
+            padding: 10px;
+            gap: 5px;
+            justify-content: flex-end;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: right;
+            padding: 30px
+        }
+
+        .button {
+            display: flex;
+            justify-content: flex-end;
+            /* margin-right: 177px; */
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            color: #494039;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .moto {
+            font-size: 2rem;
+            font-family: 'Meow Script', cursive;
+        }
+        .moto2 {
+            font-size: 1.5rem;
+            font-family: 'Audiowide', cursive;
+        }
+        button:hover {
+            background-color: #DACABD;
+            /* border:2px solid #44240a ; */
+        }
+        .shopname {
+            font-size: 2rem;
+            font-family: 'Audiowide', cursive;
+            background-color: #dacabd65;
+            color: #2c1605;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="contain"></div>
+        <div class="contains"></div>
+        <div class="contain"></div>
+    </div>
+    <div class="center-box">
+        <nav class="navbar">
+            <div class="logoport">
+                <div class="logo">
+                    <img src="logo.jpg" alt="logo" class="logos">
+                </div>
+                <h1 class="shopname">CAFEAN</h1>
+            </div>
+            <div class="nav-links">
+                <a href="" class="nav-link">specialty</a>
+                <a href="" class="nav-link">reserve</a>
+                <a href="" class="nav-link">trending</a>
+                <a href="" class="nav-link">contact</a>
+            </div>
+            <input class="search" type="text" placeholder="Search">
+        </nav>
+        <div class="theme">
+            <div class="theme-moto">
+                <div class="moto">Black coffee is awesome</div>
+                <div class="moto2"> TIME TO DISCOVER COFFEE HOUSE</div>
+                <div class="button"> <button>Discover more</button></div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu-item">
+                <img src="lop.jpg" alt="coffee1" class="menu-image">
+                <h2 class="menu-title" style="color:rgb(102, 74, 61);">Maccacino Plus</h2>
+                <h6>Add to order +</h6>
+            </div>
+            <div class="menu-item">
+                <img src="cafe.jpg" alt="coffee1" class="menu-image">
+                <h2 class="menu-title">Expresso</h2>
+                <h6>Add to order +</h6>
+
+            </div>
+            <div class="menu-item">
+                <img src="cofe.jpg" alt="coffee1" class="menu-image">
+                <h2 class="menu-title">Black Ivory Coffee</h2>
+                <h6>Add to order +</h6>
+            </div>
+        </div>
+</body>
+
+</html>

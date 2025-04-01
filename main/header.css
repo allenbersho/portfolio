@@ -1,0 +1,229 @@
+@import url("https://fonts.cdnfonts.com/css/metropolis-2");
+
+:root {
+  --shadow-color: 174deg 31% 44%;
+  --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+
+  --background: #020617;
+  --text: #defff6;
+ 
+}
+
+body {
+  font-family: "Metropolis", sans-serif;
+  margin: 0;
+  font-size: 16px;
+  background-color: var(--background);
+  color: var(--text);
+  width: 100%;
+  /* overflow-x: hidden; */
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  max-width: 100%;
+  /* outline: 1px solid red; */
+}
+
+header .nav-bar {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 70px;
+  z-index: 999;
+  transition: transform 0.2s;
+  position: fixed;
+  width: 100%;
+}
+
+.nav-hidden {
+  transform: translateY(calc(-1 * 70px));
+}
+
+header .nav-bar .name {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+header .nav-bar .name h2 {
+  padding: 8px 16px;
+  transition: 0.4s;
+}
+
+header .nav-bar .name h2:hover,
+header .nav-bar .name h2:focus {
+  background-color: var(--text);
+  color: var(--background);
+  box-shadow: var(--shadow-elevation-high);
+}
+
+header .nav-bar .links {
+  display: flex;
+  gap: 40px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30px;
+}
+
+header .nav-bar .links a {
+  color: inherit;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+header .nav-bar .links a:hover,
+header .nav-bar .links a:focus {
+  background-color: var(--text);
+  color: var(--background);
+  box-shadow: var(--shadow-elevation-high);
+}
+
+header .nav-bar .links .contact {
+  background-color: var(--text);
+  color: var(--background);
+  /* box-shadow: var(--shadow-elevation-high); */
+}
+
+header .nav-bar .links .contact:hover {
+  box-shadow: var(--shadow-elevation-high);
+}
+
+/* header .nav-bar .links .contact .mob {
+  opacity: 0;
+  transition: 0.5s !important;
+  display: none;
+}
+
+header .nav-bar .links .contact:hover .mob {
+  opacity: 1;
+  transition: 0.5s !important;
+  display: inline;
+}
+
+header .nav-bar .links .contact:hover .me {
+  opacity: 0;
+  transition: 0.5s !important;
+  display: none;
+} */
+
+
+/* Add to header.css or style.css */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.loader.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(222, 255, 246, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--text);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.loader.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(222, 255, 246, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--text);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+.loader-text {
+  color: var(--text);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 80%;
+}
+
+.loader-progress {
+  width: 200px;
+  height: 4px;
+  background: rgba(222, 255, 246, 0.2);
+  margin-top: 20px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--text);
+  transition: width 0.3s ease;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

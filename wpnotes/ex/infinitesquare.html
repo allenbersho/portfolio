@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Squares</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .squa {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: blue;
+            opacity: 0.8;
+        }
+
+        /* Animations with different delays */
+        .re1 { animation: rotate 5s linear infinite; }
+        .re2 { animation: rotate 5s linear infinite 0.2s; }
+        .re3 { animation: rotate 5s linear infinite 0.4s; }
+        .re4 { animation: rotate 6s linear infinite 0.6s; }
+        .re5 { animation: rotate 6s linear infinite 0.8s; }
+        .re6 { animation: rotate 6s linear infinite 1s; }
+        .re7 { animation: rotate 7s linear infinite 1.2s; }
+        .re8 { animation: rotate 7s linear infinite 1.4s; }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="squa re1"></div>
+        <div class="squa re2"></div>
+        <div class="squa re3"></div>
+        <div class="squa re4"></div>
+        <div class="squa re5"></div>
+        <div class="squa re6"></div>
+        <div class="squa re7"></div>
+        <div class="squa re8"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Theme</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container {
+            position: relative;
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ce539041-b1c9-46cf-b883-ea5b26701d21/d8sp8p9-cc8cadcc-773f-471a-aa59-44b980414bbe.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2NlNTM5MDQxLWIxYzktNDZjZi1iODgzLWVhNWIyNjcwMWQyMVwvZDhzcDhwOS1jYzhjYWRjYy03NzNmLTQ3MWEtYWE1OS00NGI5ODA0MTRiYmUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.XFRjfUtIVOLOyyDlVf11fvh-ITFB792wPc5_ExdUpzs');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .grass {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 150px;
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8bba97ad-76c0-4367-b694-9c9380f2656c/df8r26t-21e68e29-b974-44fd-96a4-d03a5475e50b.jpg/v1/fill/w_1280,h_1280,q_75,strp/minecraft_grass_block_texture_by_psddude_df8r26t-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcLzhiYmE5N2FkLTc2YzAtNDM2Ny1iNjk0LTljOTM4MGYyNjU2Y1wvZGY4cjI2dC0yMWU2OGUyOS1iOTc0LTQ0ZmQtOTZhNC1kMDNhNTQ3NWU1MGIuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.5EcLotbgsNR5MYn5b3k0xjW1JbWxk_12JvBOHOUrrAs');
+            background-position: 10% 25%;
+        }
+
+        .title {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        .block {
+            position: absolute;
+            bottom: 250px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <marquee behavior="scroll" direction="left">
+            <img src="clouds.png" alt="Character" class="cloud">
+            <img style="margin-top: 33px;" src="minecraft-bee.gif" alt="">
+            <img style="margin-bottom: 73px;" src="minecraft-bee.gif" alt="">
+            <img style="margin-top: 12px; " src="minecraft-bee.gif" alt="">
+            <img style="margin-top: 33px;" src="minecraft-bee.gif" alt="">
+            <img style="margin-bottom: 73px;" src="minecraft-bee.gif" alt="">
+            <img style="margin-top: 12px; " src="minecraft-bee.gif" alt="">
+            </marquee>
+        <marquee style="margin-top: 62px;" scrollamount="10" behavior="scroll" direction="left"><img src="chara.gif"
+                alt="Cloud" class="character"> <img style="transform: scaleX(-1);" src="fireee-running.gif" alt="">
+        </marquee>
+
+
+        <div class="grass"></div>
+    </div>
+</body>
+
+</html>

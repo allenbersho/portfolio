@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            background-color: azure;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            height: 700px;
+            width: 250px;
+            box-shadow: 0 0 15px black;
+            border-radius: 200px;
+            background-color: black;
+            border-end-start-radius: 100px;
+            border-end-end-radius: 100px;
+        }
+        .red{
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+            background-color: rgb(103, 99, 99);
+            margin: 20px auto;
+        }   
+        .yellow{
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+            background-color: rgb(90, 90, 84);
+            margin: 20px auto;
+        }
+        .green{
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+            background-color: rgb(89, 96, 89);
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="green"></div>
+    </div>
+    <div class="bottom"></div>
+</body>
+<script>
+    let red = document.querySelector('.red');
+    let yellow = document.querySelector('.yellow');
+    let green = document.querySelector('.green');
+    let count = 0;
+    setInterval(() => {
+        if (count == 0) {
+            red.style.backgroundColor = 'red';
+            // red.style.transition = '2s';
+            red.style.boxShadow = '0 0 30px 5px red';
+            green.style.boxShadow = '0 0 0px green';
+            yellow.style.boxShadow = '0 0 0px yellow';
+            yellow.style.backgroundColor = 'rgb(90, 90, 84)';
+            green.style.backgroundColor = 'rgb(89, 96, 89)';
+            count = 1;
+        } else if (count == 1) {
+            red.style.backgroundColor = 'rgb(103, 99, 99)';
+            yellow.style.backgroundColor = 'yellow';
+            red.style.boxShadow = '0 0 0px red';
+            green.style.boxShadow = '0 0 0px green';
+            yellow.style.boxShadow = '0 0 20px 5px yellow';
+            // yellow.style.transition = '2s';
+            green.style.backgroundColor = 'rgb(89, 96, 89)';
+            count = 2;
+        } else {
+            red.style.backgroundColor = 'rgb(103, 99, 99)';
+            yellow.style.backgroundColor = 'rgb(90, 90, 84)';
+            red.style.boxShadow = '0 0 0px red';
+            green.style.boxShadow = '0 0 20px 5px green';
+            yellow.style.boxShadow = '0 0 0px yellow';
+            // green.style.transition = '2s';
+            green.style.backgroundColor = 'green';
+            count = 0;
+            setTimeout(3000);
+        }
+    }, 3000);
+</script>
+
+</html>

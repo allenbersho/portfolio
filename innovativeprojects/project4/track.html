@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Compass</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            background: white;
+            border-radius: 50%;
+            border: 2px solid black;
+        }
+        #info {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="compass" width="300" height="300"></canvas>
+    <div id="info">Direction: N (0°)</div>
+    
+    <script>
+        const canvas = document.getElementById("compass");
+        const ctx = canvas.getContext("2d");
+        const info = document.getElementById("info");
+        let angle = 0;
+        
+        function drawCompass() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            
+            ctx.beginPath();
+            ctx.arc(150, 150, 140, 0, Math.PI * 2);
+            ctx.stroke();
+            
+            
+            ctx.font = "20px Arial";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("N", 150, 30);
+            ctx.fillText("E", 270, 150);
+            ctx.fillText("S", 150, 270);
+            ctx.fillText("W", 30, 150);
+            
+           
+            ctx.save();
+            ctx.translate(150, 150);
+            ctx.rotate((angle * Math.PI) / 180);
+            
+            ctx.beginPath();
+            ctx.moveTo(0, -100);
+            ctx.lineTo(-10, 20);
+            ctx.lineTo(10, 20);
+            ctx.closePath();
+            ctx.fillStyle = "red";
+            ctx.fill();
+            
+            ctx.restore();
+        }
+
+        function getDirection(deg) {
+            if (deg >= 337.5 || deg < 22.5) return "N";
+            if (deg >= 22.5 && deg < 67.5) return "NE";
+            if (deg >= 67.5 && deg < 112.5) return "E";
+            if (deg >= 112.5 && deg < 157.5) return "SE";
+            if (deg >= 157.5 && deg < 202.5) return "S";
+            if (deg >= 202.5 && deg < 247.5) return "SW";
+            if (deg >= 247.5 && deg < 292.5) return "W";
+            return "NW";
+        }
+
+        document.addEventListener("mousemove", (event) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = event.clientX - rect.left - 150;
+            const y = event.clientY - rect.top - 150;
+            angle = Math.atan2(y, x) * (180 / Math.PI) + 90;
+            if (angle < 0) angle += 360;
+            info.textContent = `Direction: ${getDirection(angle)} (${Math.round(angle)}°)`;
+            drawCompass();
+        });
+        
+        drawCompass();
+    </script>
+</body>
+</html>

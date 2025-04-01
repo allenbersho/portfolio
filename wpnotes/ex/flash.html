@@ -1,0 +1,56 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Hello</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap"
+        rel="stylesheet"
+      />
+      <style>
+        * {
+          margin: 0;
+          box-sizing: border-box;
+        }
+        .image {
+          background-color: rgb(207, 236, 255);
+          height: 100vh;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: "Sixtyfour Convergence", serif;
+          font-optical-sizing: auto;
+          font-weight: 400;
+          font-size: 100px;
+          font-style: normal;
+        }
+
+        .overlay {
+          background-color: rgb(0, 0, 0);
+          height: 100vh;
+          width: 100vw;
+          position: absolute;
+          top: 0;
+          left: 0%;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="image">
+        Find Me Here !!
+        <div class="overlay"></div>
+      </div>
+    </body>
+    <script>
+      document.addEventListener("mousemove", function (e) {
+        const overlay = document.querySelector(".overlay");
+        const x = e.clientX;
+        const y = e.clientY;
+        overlay.style.background = `radial-gradient(circle 200px at ${x}px ${y}px, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%)`;
+      });
+    </script>
+  </html>

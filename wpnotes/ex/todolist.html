@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e4f6bb;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 400px;
+            display: flex;
+            max-height: 400px;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            
+        }
+        .item{            
+            overflow-y: scroll;
+        }
+        .item::-webkit-scrollbar{
+            display: none;
+        }
+        .item{
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #035416;
+        }
+
+        .todo {
+            width: 100%;
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        #input {
+            flex: 1;
+            height: 40px;
+            border-radius: 8px 0 0 8px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            background-color: #f9f9f9;
+        }
+
+        .submit {
+            width: 100px;
+            border-radius: 0 8px 8px 0;
+            background-color: #dc2020;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit:hover {
+            background-color: #910808;
+        }
+
+        .item ul {
+            width: 100%;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: box-shadow 0.3s;
+        }
+
+        li:hover {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .delete {
+            background-color: transparent;
+            color: #dc3545;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .delete:hover {
+            color: #a71d2a;
+        }
+
+        .task-content {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="todo">
+            <input type="text" id="input" placeholder="Enter your task">
+            <button class="submit">Add</button>
+        </div>
+        <div class="item">
+            <ul id="do"></ul>
+        </div>
+    </div>
+    <script>
+        const input = document.getElementById('input');
+        const submit = document.querySelector('.submit');
+        const doList = document.getElementById('do');
+
+        submit.addEventListener("click", () => {
+            if (input.value.trim() === '') {
+                alert('Please enter a task.');
+                return;
+            }
+
+            const listItem = document.createElement('li');
+            const checkbox = document.createElement('input');
+            const taskContent = document.createElement('span');
+            const deleteButton = document.createElement('button');
+
+            checkbox.type = 'checkbox';
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    taskContent.classList.add('completed');
+                } else {
+                    taskContent.classList.remove('completed');
+                }
+            });
+
+            taskContent.textContent = input.value;
+            taskContent.classList.add('task-content');
+
+            deleteButton.innerHTML = '&times;';
+            deleteButton.classList.add('delete');
+            deleteButton.addEventListener('click', () => {
+                listItem.remove();
+            });
+
+            listItem.appendChild(checkbox);
+            listItem.appendChild(taskContent);
+            listItem.appendChild(deleteButton);
+            doList.appendChild(listItem);
+            input.value = '';
+        });
+
+        input.addEventListener('keypress', (event) => {
+            console.log(event);
+            if (event.key === 'Enter') {
+                submit.click();
+            }
+        });
+    </script>
+</body>
+
+</html>

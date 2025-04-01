@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+</head>
+<style>
+    body {
+        background-color: rgb(6, 19, 49);
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        width: 50%;
+        text-align: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(255, 255, 255, 0.215);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input {
+        padding: 5px;
+        width: 50%;
+        margin-top: 6px;
+    }
+
+    .button {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        display: inline-block;
+    }
+
+    .title {
+        font-size: 30px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: rgb(185, 228, 255);
+    }
+
+    .top {
+        padding: 20px;
+        display: flex;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="title"> Guess The Number</div>
+            <div class="guess">
+                <input type="number" id="num" min="1" max="10">
+            </div>
+        </div>
+        <br>
+        <div class="bottom">
+            <div class="button">
+                <button>Guess</button>
+            </div>
+            <div class="result"></div>
+        </div>
+    </div>
+</body>
+<script>
+    var result = document.querySelector(".result");
+    var num = document.querySelector("#num").value;
+    document.querySelector("button").addEventListener("click", function () {
+        var number = Math.floor(Math.random() * 10) + 1; 
+        if (num == number) {
+            result.innerHTML = "Congratulations! You have guessed the correct number";
+        } else {
+            result.innerHTML = "Sorry! The correct number is " + number;
+        }
+    });
+</script>
+
+</html>

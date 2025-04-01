@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minion Eye</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .eye {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 0 10px #000;
+        }
+
+        .pupil {
+            width: 30px;
+            height: 30px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .pupil::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .pupil::after {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .pupil {
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="eye" style="margin-right: 20px;">
+        <div class="pupil"></div>
+    </div>
+    <div class="eye" style="margin-left: 20px;">
+        <div class="pupil"></div>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', (event) => {
+            const eyes = document.querySelectorAll('.eye');
+            eyes.forEach(eye => {
+                const pupil = eye.querySelector('.pupil');
+                const eyeRect = eye.getBoundingClientRect();
+                console.log(eyeRect);
+                const eyeCenterX = eyeRect.left + eyeRect.width / 2;
+                const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+                const angle = Math.atan2(event.clientY - eyeCenterY, event.clientX - eyeCenterX);
+                const maxMove = (eyeRect.width / 2) - (pupil.offsetWidth / 2) - 5;
+
+                const pupilX = Math.cos(angle) * 90 ;
+                const pupilY = Math.sin(angle) * 90 ;
+                pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+            });
+        });
+
+    </script>
+</body>
+
+</html>
