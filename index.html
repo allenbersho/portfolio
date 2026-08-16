@@ -4,79 +4,961 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Allen</title>
-  <!-- lenis scroll -->
-  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.22/dist/lenis.css" />
-  <!-- fonts -->
+  <title>Allen Bersho A P — AI Engineer (Agentic Systems & Backend)</title>
+  <meta name="description" content="Portfolio of Allen Bersho A P, AI Engineer specializing in Agentic AI, Multi-Agent Orchestration (LangGraph, MCP), FastAPI microservices, and RAG architectures." />
+
+  <!-- Google Fonts: IBM Plex Mono & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Tiny5&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lenis Scroll & FontAwesome Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.22/dist/lenis.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="header.css" />
 </head>
 
 <body>
-  <header>
-    <nav class="nav-bar">
-      <div class="name">
-        <h2>BERSHO</h2>
-      </div>
-      <ul class="links">
-        <li>
-          <a href="../wpnotes/index.html"> WP NOTES </a>
-        </li>
-        <li>
-          <a href="../projests file/index.html"> PROJECTS </a>
-        </li>
-        <li>
-          <a href="../portfolio/project/index.html" target="_parent"> PORTFOLIO </a>
-        </li>
-        <li>
-          <a href="../contact/index.html" class="contact" id="contact">
-            <span class="me">CONTACT ME</span>
+  <!-- System Background Cyber Grid -->
+  <div class="cyber-grid"></div>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
 
-          </a>
-        </li>
-      </ul>
-    </nav>
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span class="brand-code">&lt;AB&gt;</span>
+        <span class="brand-name">ALLEN BERSHO</span>
+        <span class="brand-badge"><span class="pulse-dot"></span> AGENTIC AI</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" class="nav-item"><span class="nav-num">01.</span> ABOUT</a>
+        <a href="#skills" class="nav-item"><span class="nav-num">02.</span> SKILLS</a>
+        <a href="#projects" class="nav-item"><span class="nav-num">03.</span> PROJECTS</a>
+        <a href="#architecture" class="nav-item"><span class="nav-num">04.</span> HOW I THINK</a>
+        <a href="#certifications" class="nav-item"><span class="nav-num">05.</span> CERTS</a>
+        <a href="#contact" class="nav-item"><span class="nav-num">06.</span> CONTACT</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline btn-sm" id="openResumeBtn">
+          <i class="fa-solid fa-file-pdf"></i> RESUME PDF
+        </button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="allen" id="allen">
-      <div class="wrapper">
-        <div class="text">
-          <svg viewBox="0 0 240 70">
-            <text x="0" y="35" class="al">ALLEN</text>
-            <text x="0" y="60" class="al">BERSHO.</text>
-          </svg>
-          <!-- <h2>ALLEN</h2>
-            <h2>BERSHO.</h2> -->
-          <h3>I'm a <span></span></h3>
-          <p>
-            I am a passionate developer specializing in web technologies and software development. My expertise includes
-            languages like Python, JavaScript, C, and C++, along with frameworks such as Django and React. I also have
-            experience in database management with MongoDB, SQLite, and MySQL, allowing me to build efficient and
-            scalable applications
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-text-content">
+          <div class="terminal-badge">
+            <i class="fa-solid fa-terminal"></i> SYSTEM_ORCHESTRATOR_V2.6 :: AGENTIC AI & BACKEND
+          </div>
+
+          <h1 class="hero-title">
+            Allen Bersho <span class="accent-text">A P</span>
+          </h1>
+
+          <div class="hero-subtitle-tag">
+            <span class="typewriter-text">AI ENGINEER — AGENTIC SYSTEMS & BACKEND</span>
+          </div>
+
+          <p class="hero-narrative">
+            "I build systems where AI agents don't just chat — <strong>they take action.</strong>"
           </p>
+
+          <p class="hero-description">
+            Specializing in stateful multi-agent orchestration (LangGraph, CrewAI), Model Context Protocol (MCP) integrations, autonomous RAG pipelines, and high-concurrency FastAPI microservices.
+          </p>
+
+          <div class="hero-highlights">
+            <div class="highlight-chip"><i class="fa-solid fa-diagram-project"></i> LangGraph & MCP</div>
+            <div class="highlight-chip"><i class="fa-solid fa-bolt"></i> Async FastAPI</div>
+            <div class="highlight-chip"><i class="fa-solid fa-brain"></i> Autonomous RAG</div>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-code-fork"></i> EXPLORE PROJECTS
+            </a>
+            <a href="#architecture" class="btn btn-secondary">
+              <i class="fa-solid fa-sitemap"></i> HOW I THINK
+            </a>
+            <button class="btn btn-outline" id="heroChatBtn">
+              <i class="fa-solid fa-comments"></i> ASK PORTFOLIO AI
+            </button>
+            <button class="btn btn-ghost" id="heroDownloadBtn">
+              <i class="fa-solid fa-download"></i> RESUME
+            </button>
+          </div>
+        </div>
+
+        <!-- HERO GRAPHIC: Interactive Agent Workflow Visualizer -->
+        <div class="hero-visual-card">
+          <div class="visual-header">
+            <div class="visual-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="visual-title">agent_orchestrator.graph.ts</span>
+            <span class="visual-status"><i class="fa-solid fa-circle pulse-icon"></i> ACTIVE GRAPH</span>
+          </div>
+
+          <div class="canvas-container">
+            <canvas id="heroAgentCanvas"></canvas>
+            <div class="canvas-overlay-info">
+              <span id="activeNodeLabel"><i class="fa-solid fa-spinner fa-spin"></i> Executing LangGraph State Machine...</span>
+            </div>
+          </div>
+
+          <div class="visual-footer-stats">
+            <div class="v-stat"><span class="v-label">Protocol:</span> <span class="v-val">MCP v1.0</span></div>
+            <div class="v-stat"><span class="v-label">Execution:</span> <span class="v-val">ReWOO DAG</span></div>
+            <div class="v-stat"><span class="v-label">Backend:</span> <span class="v-val">FastAPI Async</span></div>
+          </div>
         </div>
       </div>
     </section>
-    <div class="canvas_cont">
-      <canvas id="canvas3d"></canvas>
-    </div>
-    <div class="spacer"></div>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="section-container">
+        <div class="section-tag"><span class="tag-hash">//</span> 01. NARRATIVE & CREDIBILITY</div>
+        <h2 class="section-title">Engineered for Action, Not Just Chat</h2>
+
+        <div class="about-grid">
+          <div class="about-card main-narrative">
+            <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Backend Rigor Meets Agentic AI Fluency</h3>
+            <p>
+              I am a Computer Science (AI & Robotics) student at <strong>Vellore Institute of Technology, Chennai (GPA: 8.56/10)</strong>, with a core focus on building production-ready autonomous agent systems and robust backend infrastructure.
+            </p>
+            <p>
+              While many AI applications remain fragile prompt-wrappers, I architect resilient state machines using <strong>LangGraph</strong>, standardized tool servers via <strong>Model Context Protocol (MCP)</strong>, and asynchronous <strong>FastAPI microservices</strong> that execute real-world actions reliably.
+            </p>
+            <div class="key-values">
+              <div class="value-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Multi-Agent Orchestration & Tool Use</span>
+              </div>
+              <div class="value-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Deterministic State Machines over Simple Chains</span>
+              </div>
+              <div class="value-item">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>High-Performance Async Backend Architectures</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-column">
+            <div class="stat-box">
+              <div class="stat-number">3+</div>
+              <div class="stat-title">Production-Shaped AI Projects</div>
+              <div class="stat-desc">DevPulse, CogniCast, Job Copilot built with LangGraph & FastAPI</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">8.56</div>
+              <div class="stat-title">CGPA @ VIT Chennai</div>
+              <div class="stat-desc">B.Tech Computer Science (AI & Robotics)</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">200+</div>
+              <div class="stat-title">DSA Problems Solved</div>
+              <div class="stat-desc">Competitive algorithmic problem solving proof</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">IBM</div>
+              <div class="stat-title">Certified Agentic AI</div>
+              <div class="stat-desc">Building Agents with Agentic AI Credential</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="section-container">
+        <div class="section-tag"><span class="tag-hash">//</span> 02. TECHNICAL PROOF</div>
+        <h2 class="section-title">Technical Skills & System Architecture</h2>
+        <p class="section-subtitle">Grouped by domain depth and production proof — not a wall of generic tags.</p>
+
+        <div class="skills-grid">
+          <!-- Category 1 -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="cat-icon cyan"><i class="fa-solid fa-network-wired"></i></div>
+              <div class="cat-title">
+                <h3>Agentic AI & Protocols</h3>
+                <span class="cat-badge">Core Mastery</span>
+              </div>
+            </div>
+            <ul class="skill-list">
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Multi-Agent Orchestration</span>
+                  <span class="skill-proof">LangGraph, CrewAI, AutoGen</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Agent Architectures</span>
+                  <span class="skill-proof">ReAct, ReWOO, Human-in-Loop</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Protocols & RAG</span>
+                  <span class="skill-proof">MCP Protocol, A2A, Agentic RAG</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="cat-icon violet"><i class="fa-solid fa-code"></i></div>
+              <div class="cat-title">
+                <h3>Programming Languages</h3>
+                <span class="cat-badge">Backend & Systems</span>
+              </div>
+            </div>
+            <ul class="skill-list">
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-proof">Advanced, Asyncio, Pydantic</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">SQL</span>
+                  <span class="skill-proof">Queries, Schema Design, Indexing</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Java & C</span>
+                  <span class="skill-proof">Data Structures, OOP, Systems</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="cat-icon green"><i class="fa-solid fa-brain"></i></div>
+              <div class="cat-title">
+                <h3>AI / ML Frameworks</h3>
+                <span class="cat-badge">Models & Vector DBs</span>
+              </div>
+            </div>
+            <ul class="skill-list">
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">LLM Tool Calling & Memory</span>
+                  <span class="skill-proof">LangChain, Ollama, Prompt Engineering</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Vector Databases & RAG</span>
+                  <span class="skill-proof">FAISS, Embeddings, Hybrid Search</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">ML Foundations</span>
+                  <span class="skill-proof">PyTorch, Supervised/Unsupervised, Fine-tuning</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 82%;"></div></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="cat-icon yellow"><i class="fa-solid fa-server"></i></div>
+              <div class="cat-title">
+                <h3>Backend & Infrastructure</h3>
+                <span class="cat-badge">Production Ready</span>
+              </div>
+            </div>
+            <ul class="skill-list">
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">FastAPI & Async Microservices</span>
+                  <span class="skill-proof">REST APIs, Async Tasks, WebSockets</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 94%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">Databases</span>
+                  <span class="skill-proof">MySQL, MongoDB, SQLite</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 86%;"></div></div>
+              </li>
+              <li>
+                <div class="skill-info">
+                  <span class="skill-name">DevOps & Linux Tools</span>
+                  <span class="skill-proof">Git, Linux Shell, Docker (Basics)</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 84%;"></div></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="section-container">
+        <div class="section-tag"><span class="tag-hash">//</span> 03. CORE PRODUCTION PROJECTS</div>
+        <h2 class="section-title">Featured Projects with System Architecture</h2>
+        <p class="section-subtitle">Structured by Problem $\rightarrow$ Architecture $\rightarrow$ Engineering Decisions $\rightarrow$ Stack & Code</p>
+
+        <div class="projects-list">
+          
+          <!-- PROJECT 1: DevPulse -->
+          <article class="project-card-full">
+            <div class="project-header">
+              <div class="project-title-area">
+                <span class="project-year">2026</span>
+                <h3>DevPulse — Multi-Agent GitHub Intelligence Platform</h3>
+                <p class="project-tagline">Autonomous multi-agent platform for repository health analysis, issue triaging, and security auditing via MCP.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/allenbersho" target="_blank" class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              </div>
+            </div>
+
+            <!-- Problem Line -->
+            <div class="project-problem-box">
+              <span class="prob-label"><i class="fa-solid fa-triangle-exclamation"></i> PROBLEM:</span>
+              <span class="prob-text">GitHub repository maintenance, pull request security reviews, and issue triaging require tedious manual effort across fragmented tools, leading to delayed releases and unaddressed vulnerabilities.</span>
+            </div>
+
+            <!-- Architecture Visual Box & Arrow Diagram -->
+            <div class="architecture-visualizer">
+              <div class="arch-visual-header">
+                <span>SYSTEM ARCHITECTURE & AGENT COORDINATION</span>
+                <span class="arch-badge">LangGraph + MCP Servers</span>
+              </div>
+              <div class="arch-diagram-flow">
+                <div class="arch-node input-node">
+                  <div class="node-icon"><i class="fa-solid fa-user"></i></div>
+                  <div class="node-label">User Request / Webhook</div>
+                  <div class="node-sub">Streamlit UI</div>
+                </div>
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="arch-node orchestrator-node">
+                  <div class="node-icon"><i class="fa-solid fa-sitemap"></i></div>
+                  <div class="node-label">LangGraph Supervisor</div>
+                  <div class="node-sub">State Router Engine</div>
+                </div>
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="arch-agents-cluster">
+                  <div class="arch-node agent-node">
+                    <i class="fa-solid fa-code"></i> Code Analyst Agent
+                  </div>
+                  <div class="arch-node agent-node">
+                    <i class="fa-solid fa-shield-halved"></i> Security Agent
+                  </div>
+                  <div class="arch-node agent-node">
+                    <i class="fa-solid fa-code-pull-request"></i> PR Reviewer Agent
+                  </div>
+                </div>
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="arch-node mcp-node">
+                  <div class="node-icon"><i class="fa-solid fa-plug"></i></div>
+                  <div class="node-label">MCP Tool Servers</div>
+                  <div class="node-sub">GitHub REST / GraphQL</div>
+                </div>
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="arch-node output-node">
+                  <div class="node-icon"><i class="fa-solid fa-chart-line"></i></div>
+                  <div class="node-label">Repo Health Audit</div>
+                  <div class="node-sub">Security & Issue Report</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Engineering Decisions -->
+            <div class="engineering-decisions">
+              <h4><i class="fa-solid fa-gear"></i> Key Engineering Decisions & Rationale:</h4>
+              <div class="decisions-grid">
+                <div class="decision-item">
+                  <strong>Why LangGraph over linear chains:</strong>
+                  <p>Implemented stateful cyclic graph workflows to allow multi-step verification, fallback error handling, and human-in-the-loop review before taking mutating GitHub actions.</p>
+                </div>
+                <div class="decision-item">
+                  <strong>Why Model Context Protocol (MCP):</strong>
+                  <p>Used MCP tool servers to decouple tool interfaces from LLM prompts. Specialized agents securely call GitHub tools with standardized schemas and zero custom glue code.</p>
+                </div>
+                <div class="decision-item">
+                  <strong>Outcome & Impact:</strong>
+                  <p>Automated repository health scoring, PR vulnerability scans, and issue categorization in real-time with streaming agent status back to the user interface.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Stack Tags -->
+            <div class="project-stack">
+              <span class="stack-tag"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="stack-tag">LangGraph</span>
+              <span class="stack-tag">MCP Protocol</span>
+              <span class="stack-tag">FastAPI</span>
+              <span class="stack-tag">Streamlit</span>
+              <span class="stack-tag">GitHub API</span>
+            </div>
+          </article>
+
+
+          <!-- PROJECT 2: CogniCast -->
+          <article class="project-card-full">
+            <div class="project-header">
+              <div class="project-title-area">
+                <span class="project-year">2025</span>
+                <h3>CogniCast — Agentic Educational Content Generator</h3>
+                <p class="project-tagline">Autonomous pipeline for automated research, script generation, and educational content assembly.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/allenbersho" target="_blank" class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              </div>
+            </div>
+
+            <!-- Problem Line -->
+            <div class="project-problem-box">
+              <span class="prob-label"><i class="fa-solid fa-triangle-exclamation"></i> PROBLEM:</span>
+              <span class="prob-text">Synthesizing raw academic documents into structured lecture scripts, summary decks, and multimedia content takes hours of manual research and formatting.</span>
+            </div>
+
+            <!-- Architecture Visual Diagram -->
+            <div class="architecture-visualizer">
+              <div class="arch-visual-header">
+                <span>SYSTEM ARCHITECTURE & DATA PIPELINE</span>
+                <span class="arch-badge">FastAPI + FAISS + Ollama</span>
+              </div>
+              <div class="arch-diagram-flow">
+                <div class="arch-node input-node">
+                  <div class="node-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                  <div class="node-label">Academic Papers</div>
+                  <div class="node-sub">Raw Documents</div>
+                </div>
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="arch-node mcp-node">
+                  <div class="node-icon"><i class="fa-solid fa-database"></i></div>
+                  <div class="node-label">FAISS Vector RAG</div>
+                  <div class="node-sub">Embeddings & Sources</div>
+                </div>
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="arch-agents-cluster">
+                  <div class="arch-node agent-node">
+                    <i class="fa-solid fa-magnifying-glass"></i> Research Agent
+                  </div>
+                  <div class="arch-node agent-node">
+                    <i class="fa-solid fa-pen-nib"></i> Script Synthesizer
+                  </div>
+                </div>
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="arch-node orchestrator-node">
+                  <div class="node-icon"><i class="fa-solid fa-server"></i></div>
+                  <div class="node-label">FastAPI Queue</div>
+                  <div class="node-sub">Async Job Engine</div>
+                </div>
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="arch-node output-node">
+                  <div class="node-icon"><i class="fa-solid fa-file-audio"></i></div>
+                  <div class="node-label">Educational Content</div>
+                  <div class="node-sub">Scripts & Summaries</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Engineering Decisions -->
+            <div class="engineering-decisions">
+              <h4><i class="fa-solid fa-gear"></i> Key Engineering Decisions & Rationale:</h4>
+              <div class="decisions-grid">
+                <div class="decision-item">
+                  <strong>Microservices Architecture:</strong>
+                  <p>Built a FastAPI backend decoupling heavy LLM text generation from media assembly tasks to process long-running jobs without blocking API endpoints.</p>
+                </div>
+                <div class="decision-item">
+                  <strong>Local LLMs via Ollama:</strong>
+                  <p>Utilized Ollama for local LLM inference to ensure zero API cost, data privacy for proprietary research materials, and low-latency local execution.</p>
+                </div>
+                <div class="decision-item">
+                  <strong>Outcome & Impact:</strong>
+                  <p>Reduced course material production time from days to minutes while guaranteeing citation fidelity via FAISS vector chunk retrieval.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Stack Tags -->
+            <div class="project-stack">
+              <span class="stack-tag"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="stack-tag">FastAPI</span>
+              <span class="stack-tag">LangChain</span>
+              <span class="stack-tag">Ollama</span>
+              <span class="stack-tag">FAISS DB</span>
+              <span class="stack-tag">Asyncio</span>
+            </div>
+          </article>
+
+
+          <!-- PROJECT 3: Job Copilot -->
+          <article class="project-card-full">
+            <div class="project-header">
+              <div class="project-title-area">
+                <span class="project-year">2024</span>
+                <h3>Job Copilot — AI-Powered Resume & Application Tracker</h3>
+                <p class="project-tagline">Full-stack copilot automating resume parsing, ATS alignment scoring, and application state tracking.</p>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/allenbersho" target="_blank" class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+              </div>
+            </div>
+
+            <!-- Problem Line -->
+            <div class="project-problem-box">
+              <span class="prob-label"><i class="fa-solid fa-triangle-exclamation"></i> PROBLEM:</span>
+              <span class="prob-text">Job seekers struggle with tracking dozens of applications across platforms, tailoring resumes to job descriptions, and scoring ATS compatibility.</span>
+            </div>
+
+            <!-- Architecture Diagram -->
+            <div class="architecture-visualizer">
+              <div class="arch-visual-header">
+                <span>SYSTEM ARCHITECTURE & DATA FLOW</span>
+                <span class="arch-badge">ReactJS + FastAPI + SQLite</span>
+              </div>
+              <div class="arch-diagram-flow">
+                <div class="arch-node input-node">
+                  <div class="node-icon"><i class="fa-brands fa-react"></i></div>
+                  <div class="node-label">ReactJS Interface</div>
+                  <div class="node-sub">Interactive UI</div>
+                </div>
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="arch-node orchestrator-node">
+                  <div class="node-icon"><i class="fa-solid fa-server"></i></div>
+                  <div class="node-label">FastAPI API Gateway</div>
+                  <div class="node-sub">Endpoints & Middleware</div>
+                </div>
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="arch-node mcp-node">
+                  <div class="node-icon"><i class="fa-solid fa-gears"></i></div>
+                  <div class="node-label">Resume Parser Agent</div>
+                  <div class="node-sub">ATS Match Engine</div>
+                </div>
+                <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="arch-node output-node">
+                  <div class="node-icon"><i class="fa-solid fa-database"></i></div>
+                  <div class="node-label">SQLite Database</div>
+                  <div class="node-sub">Application Tracker</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Engineering Decisions -->
+            <div class="engineering-decisions">
+              <h4><i class="fa-solid fa-gear"></i> Key Engineering Decisions & Rationale:</h4>
+              <div class="decisions-grid">
+                <div class="decision-item">
+                  <strong>Structured JSON Schema Parsing:</strong>
+                  <p>Enforced Pydantic schema validation on resume extraction to convert unstructured text into structured skill vectors for reliable matching.</p>
+                </div>
+                <div class="decision-item">
+                  <strong>Responsive Full-Stack Design:</strong>
+                  <p>Coupled a lightweight React frontend with a high-throughput FastAPI backend for instantaneous feedback during resume editing.</p>
+                </div>
+                <div class="decision-item">
+                  <strong>Outcome & Impact:</strong>
+                  <p>Streamlined candidate application tracking and improved ATS resume match keyword alignment scores with instant candidate feedback.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Stack Tags -->
+            <div class="project-stack">
+              <span class="stack-tag"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="stack-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="stack-tag">FastAPI</span>
+              <span class="stack-tag">ReactJS</span>
+              <span class="stack-tag">SQLite</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE & HOW I THINK SECTION -->
+    <section class="section arch-section" id="architecture">
+      <div class="section-container">
+        <div class="section-tag"><span class="tag-hash">//</span> 04. DIFFERENTIATOR</div>
+        <h2 class="section-title">Architecture: How I Think & Build Systems</h2>
+        <p class="section-subtitle">Evaluating agent patterns, state management, and protocol trade-offs for production systems.</p>
+
+        <div class="arch-cards-grid">
+          
+          <!-- Card 1: ReAct vs ReWOO -->
+          <div class="arch-concept-card">
+            <div class="concept-header">
+              <div class="concept-badge"><i class="fa-solid fa-bolt"></i> PATTERN COMPARISON</div>
+              <h3>ReAct vs. ReWOO Architecture Selection</h3>
+            </div>
+            <p>Choosing the right execution paradigm directly determines latency, LLM API costs, and system reliability.</p>
+
+            <div class="comparison-table">
+              <div class="comp-col react-col">
+                <div class="col-head">ReAct (Reasoning + Action)</div>
+                <ul>
+                  <li><i class="fa-solid fa-play"></i> Interleaves thought, tool action, and observation step-by-step.</li>
+                  <li><i class="fa-solid fa-check"></i> Great for unpredictable, open-ended tool discovery.</li>
+                  <li><i class="fa-solid fa-xmark"></i> High latency & high token cost due to repeated context re-prompting.</li>
+                </ul>
+              </div>
+              <div class="comp-col rewoo-col">
+                <div class="col-head">ReWOO (Reasoning W/O Observation)</div>
+                <ul>
+                  <li><i class="fa-solid fa-sitemap"></i> Generates full tool execution DAG upfront, then executes tools in parallel.</li>
+                  <li><i class="fa-solid fa-check"></i> ~50% lower latency and ~40% reduced token consumption.</li>
+                  <li><i class="fa-solid fa-check"></i> Ideal for structured, deterministic multi-tool workflows.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="interactive-simulator-box">
+              <div class="sim-header">
+                <span>SIMULATION ENGINE:</span>
+                <div class="sim-toggle">
+                  <button class="sim-btn active" id="simReWooBtn">ReWOO (Parallel DAG)</button>
+                  <button class="sim-btn" id="simReActBtn">ReAct (Step-by-Step)</button>
+                </div>
+              </div>
+              <div class="sim-output" id="simOutputBox">
+                <span class="sim-line cyan">&gt; Initiating ReWOO Plan Phase...</span>
+                <span class="sim-line">&gt; Step 1 [Planner]: Generated DAG: [Tool_A, Tool_B] -&gt; [Synthesizer]</span>
+                <span class="sim-line green">&gt; Step 2 [Worker Engine]: Executed Tool_A &amp; Tool_B concurrently (0.4s)</span>
+                <span class="sim-line violet">&gt; Step 3 [Solver]: Final response assembled. Total time: 0.6s | Tokens: 420</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Single vs Multi-Agent Orchestration -->
+          <div class="arch-concept-card">
+            <div class="concept-header">
+              <div class="concept-badge"><i class="fa-solid fa-diagram-project"></i> SCALING PARADIGM</div>
+              <h3>Single-Agent vs. Multi-Agent Orchestration</h3>
+            </div>
+            <p>Knowing when to keep execution bound to a single agent vs. decomposing into a LangGraph multi-agent state machine.</p>
+
+            <div class="tradeoff-boxes">
+              <div class="trade-box">
+                <div class="tb-title"><i class="fa-solid fa-user"></i> Single-Agent Bounds</div>
+                <p>Optimal when total tools &lt; 5 and the context window can safely hold all system prompts without prompt contamination or tool hallucination.</p>
+              </div>
+              <div class="trade-box highlight">
+                <div class="tb-title"><i class="fa-solid fa-people-group"></i> Multi-Agent LangGraph</div>
+                <p>Necessary when separating concern domains (e.g. Code Review vs Security Audit). Isolate tool contexts into specialized agent nodes to preserve focus and allow cyclic state recovery.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: MCP Protocol -->
+          <div class="arch-concept-card">
+            <div class="concept-header">
+              <div class="concept-badge"><i class="fa-solid fa-plug"></i> STANDARDIZATION</div>
+              <h3>Model Context Protocol (MCP) Integration</h3>
+            </div>
+            <p>Why I adopt MCP to standardize how agents interact with external tools and backends.</p>
+            <p>
+              MCP eliminates custom glue code by establishing a unified client-server interface for LLMs to discover tools, inspect schemas, and query resources securely over standard JSON-RPC.
+            </p>
+            <div class="mcp-tags">
+              <span class="m-tag"><i class="fa-solid fa-shield"></i> Secure Sandboxing</span>
+              <span class="m-tag"><i class="fa-solid fa-arrows-rotate"></i> Dynamic Tool Discovery</span>
+              <span class="m-tag"><i class="fa-solid fa-layer-group"></i> Interoperable Servers</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & ACHIEVEMENTS SECTION -->
+    <section class="section certs-section" id="certifications">
+      <div class="section-container">
+        <div class="section-tag"><span class="tag-hash">//</span> 05. CREDIBILITY & PROOF</div>
+        <h2 class="section-title">Certifications & Algorithmic Achievements</h2>
+
+        <div class="certs-grid">
+          <!-- Cert 1 -->
+          <div class="cert-card">
+            <div class="cert-badge-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="cert-details">
+              <span class="cert-date">July 2026</span>
+              <h3>Building Agents with Agentic AI</h3>
+              <p class="cert-issuer">IBM Career Education Program (IBM Developer Skills Network)</p>
+              <p class="cert-desc">Verified certification covering multi-agent system design, autonomous tool execution, and agentic workflows.</p>
+            </div>
+          </div>
+
+          <!-- Achievement 2 -->
+          <div class="cert-card">
+            <div class="cert-badge-icon gold"><i class="fa-solid fa-trophy"></i></div>
+            <div class="cert-details">
+              <span class="cert-date">Ongoing</span>
+              <h3>200+ Algorithmic Problems Solved</h3>
+              <p class="cert-issuer">Competitive Programming Platforms</p>
+              <p class="cert-desc">Demonstrated problem-solving rigor across data structures, graph algorithms, dynamic programming, and optimization.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="section-container">
+        <div class="section-tag"><span class="tag-hash">//</span> 06. CONVERSION</div>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Interested in collaborating or discussing agentic AI systems & backend opportunities? Reach out directly.</p>
+
+        <div class="contact-grid">
+          <a href="mailto:allenbersho@gmail.com" class="contact-card">
+            <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="c-info">
+              <span class="c-label">Email</span>
+              <span class="c-val">allenbersho@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="https://linkedin.com/in/allen-bersho" target="_blank" class="contact-card">
+            <div class="c-icon"><i class="fa-brands fa-linkedin"></i></div>
+            <div class="c-info">
+              <span class="c-label">LinkedIn</span>
+              <span class="c-val">linkedin.com/in/allen-bersho</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/allenbersho" target="_blank" class="contact-card">
+            <div class="c-icon"><i class="fa-brands fa-github"></i></div>
+            <div class="c-info">
+              <span class="c-label">GitHub</span>
+              <span class="c-val">github.com/allenbersho</span>
+            </div>
+          </a>
+
+          <a href="tel:9381998797" class="contact-card">
+            <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="c-info">
+              <span class="c-label">Phone</span>
+              <span class="c-val">+91 9381998797</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="contact-banner">
+          <h3>Ready to build resilient agentic systems?</h3>
+          <div class="banner-ctas">
+            <a href="mailto:allenbersho@gmail.com" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Email</a>
+            <button class="btn btn-outline" id="contactResumeBtn"><i class="fa-solid fa-file-pdf"></i> Download Resume</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="brand-code">&lt;AB&gt;</span> Allen Bersho A P — AI Engineer
+      </div>
+      <div class="footer-center">
+        <span>Backend Rigor + Agentic AI Fluency</span>
+      </div>
+      <div class="footer-right">
+        <span>© 2026. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING AI AGENT CHAT WIDGET -->
+  <div class="chat-widget" id="chatWidget">
+    <button class="chat-launcher" id="chatLauncher" aria-label="Ask Portfolio AI">
+      <span class="launcher-pulse"></span>
+      <i class="fa-solid fa-bot"></i>
+      <span class="launcher-text">Ask Portfolio AI</span>
+    </button>
+
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <div class="c-title">
+          <i class="fa-solid fa-robot"></i>
+          <span>ALLEN_PORTFOLIO_BOT v1.0</span>
+          <span class="c-status">ONLINE</span>
+        </div>
+        <button class="c-close" id="chatCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="chat-body" id="chatBody">
+        <div class="chat-msg bot">
+          <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+          <div class="msg-content">
+            Hello! I am Allen's Portfolio AI Agent. Ask me anything about Allen's projects (DevPulse, CogniCast, Job Copilot), tech stack, architecture decisions, or contact info.
+          </div>
+        </div>
+
+        <div class="chat-suggestions">
+          <button class="sug-btn" data-query="What projects has Allen built?">Projects Overview</button>
+          <button class="sug-btn" data-query="Explain DevPulse architecture">DevPulse Architecture</button>
+          <button class="sug-btn" data-query="Why does Allen use ReWOO over ReAct?">ReWOO vs ReAct</button>
+          <button class="sug-btn" data-query="How can I contact Allen?">Contact Info</button>
+        </div>
+      </div>
+
+      <form class="chat-input-area" id="chatForm">
+        <input type="text" id="chatInput" placeholder="Ask about Allen's agentic systems & stack..." autocomplete="off" />
+        <button type="submit" class="btn-send"><i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <!-- RESUME MODAL VIEWER -->
+  <div class="modal-backdrop" id="resumeModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title"><i class="fa-solid fa-file-pdf"></i> Allen Bersho A P — Resume</div>
+        <div class="modal-actions">
+          <button class="btn btn-sm btn-primary" id="printResumeBtn"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+          <button class="modal-close" id="closeResumeBtn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+      <div class="modal-body printable-resume">
+        <div class="resume-header">
+          <h1>Allen Bersho A P</h1>
+          <p class="r-contact">9381998797 | allenbersho@gmail.com | github.com/allenbersho | linkedin.com/in/allen-bersho</p>
+        </div>
+
+        <div class="r-section">
+          <h2>PROFESSIONAL SUMMARY</h2>
+          <p>AI Engineer specializing in Agentic AI, multi-agent systems, and LLM-powered applications. Experienced in building production-ready RAG pipelines, autonomous AI agents, and FastAPI-based backend systems using LangGraph, LangChain, and MCP. Passionate about developing intelligent software that automates complex workflows and solves real-world problems.</p>
+        </div>
+
+        <div class="r-section">
+          <h2>TECHNICAL SKILLS</h2>
+          <p><strong>Agentic AI:</strong> ReAct, ReWOO Architectures, Agentic RAG, MCP &amp; A2A Protocols, Multi-Agent Orchestration (LangGraph, CrewAI, AutoGen).</p>
+          <p><strong>Programming Languages:</strong> Python (Advanced), Java, C, SQL.</p>
+          <p><strong>AI/ML:</strong> PyTorch, LangChain, Vector Databases (FAISS), Prompt Engineering, Fine-tuning, Memory, Tool Calling, Planning, Supervised and Unsupervised Learning.</p>
+          <p><strong>Backend &amp; Tools:</strong> FastAPI, Git, Linux, Docker (Basics), MySQL, MongoDB.</p>
+        </div>
+
+        <div class="r-section">
+          <h2>EDUCATION</h2>
+          <div class="r-flex">
+            <strong>Vellore Institute of Technology, Chennai</strong>
+            <span>Chennai, India</span>
+          </div>
+          <div class="r-flex">
+            <em>Bachelor of Technology in Computer Science (AI &amp; Robotics) | GPA: 8.56/10</em>
+            <span>Aug. 2023 – Present</span>
+          </div>
+        </div>
+
+        <div class="r-section">
+          <h2>PROJECTS</h2>
+          
+          <div class="r-project">
+            <div class="r-flex">
+              <strong>DevPulse - Multi-Agent GitHub Intelligence Platform</strong>
+              <span>2026</span>
+            </div>
+            <p class="r-sub">Python, LangGraph, MCP, FastAPI, Streamlit | GitHub</p>
+            <ul>
+              <li>Built a multi-agent platform that analyzes GitHub repositories, issues, releases, pull requests, security vulnerabilities, and overall project health.</li>
+              <li>Implemented LangGraph workflows and MCP servers to coordinate specialized AI agents with GitHub tools and real-time repository data.</li>
+            </ul>
+          </div>
+
+          <div class="r-project">
+            <div class="r-flex">
+              <strong>CogniCast - Agentic Educational Content Generator</strong>
+              <span>2025</span>
+            </div>
+            <p class="r-sub">Python, FastAPI, LangChain, Ollama | GitHub</p>
+            <ul>
+              <li>Designed an autonomous pipeline that performs research, generates scripts using LLMs, and assembles educational content automatically.</li>
+              <li>Built a FastAPI microservices backend capable of handling concurrent requests and media generation workflows.</li>
+            </ul>
+          </div>
+
+          <div class="r-project">
+            <div class="r-flex">
+              <strong>Job Copilot</strong>
+              <span>2024</span>
+            </div>
+            <p class="r-sub">Python, JavaScript, FastAPI, ReactJS, SQLite | GitHub</p>
+            <ul>
+              <li>Developed an AI-powered job copilot that helps automate resume parsing, job recommendation, and application tracking workflows.</li>
+              <li>Implemented a full-stack interface with backend AI processing and a responsive frontend for interactive job search and screening support.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="r-section">
+          <h2>CERTIFICATIONS</h2>
+          <p><strong>Building Agents with Agentic AI</strong> (Jul. 2026) — IBM Career Education Program (IBM Developer Skills Network)</p>
+        </div>
+
+        <div class="r-section">
+          <h2>ACHIEVEMENTS</h2>
+          <p>• Solved 200+ algorithmic and data structure problems across multiple competitive programming platforms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-
   <script src="main.js"></script>
-  <script src="header.js"></script>
 </body>
 
 </html>
