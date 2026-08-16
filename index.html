@@ -92,10 +92,7 @@
             <a href="#architecture" class="btn btn-secondary">
               <i class="fa-solid fa-sitemap"></i> HOW I THINK
             </a>
-            <button class="btn btn-outline" id="heroChatBtn">
-              <i class="fa-solid fa-comments"></i> ASK PORTFOLIO AI
-            </button>
-            <button class="btn btn-ghost" id="heroDownloadBtn">
+            <button class="btn btn-outline" id="heroDownloadBtn">
               <i class="fa-solid fa-download"></i> RESUME
             </button>
           </div>
@@ -819,46 +816,6 @@
     </div>
   </footer>
 
-  <!-- FLOATING AI AGENT CHAT WIDGET -->
-  <div class="chat-widget" id="chatWidget">
-    <button class="chat-launcher" id="chatLauncher" aria-label="Ask Portfolio AI">
-      <span class="launcher-pulse"></span>
-      <i class="fa-solid fa-bot"></i>
-      <span class="launcher-text">Ask Portfolio AI</span>
-    </button>
-
-    <div class="chat-window" id="chatWindow">
-      <div class="chat-header">
-        <div class="c-title">
-          <i class="fa-solid fa-robot"></i>
-          <span>ALLEN_PORTFOLIO_BOT v1.0</span>
-          <span class="c-status">ONLINE</span>
-        </div>
-        <button class="c-close" id="chatCloseBtn"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-
-      <div class="chat-body" id="chatBody">
-        <div class="chat-msg bot">
-          <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
-          <div class="msg-content">
-            Hello! I am Allen's Portfolio AI Agent. Ask me anything about Allen's projects (DevPulse, CogniCast, Job Copilot), tech stack, architecture decisions, or contact info.
-          </div>
-        </div>
-
-        <div class="chat-suggestions">
-          <button class="sug-btn" data-query="What projects has Allen built?">Projects Overview</button>
-          <button class="sug-btn" data-query="Explain DevPulse architecture">DevPulse Architecture</button>
-          <button class="sug-btn" data-query="Why does Allen use ReWOO over ReAct?">ReWOO vs ReAct</button>
-          <button class="sug-btn" data-query="How can I contact Allen?">Contact Info</button>
-        </div>
-      </div>
-
-      <form class="chat-input-area" id="chatForm">
-        <input type="text" id="chatInput" placeholder="Ask about Allen's agentic systems & stack..." autocomplete="off" />
-        <button type="submit" class="btn-send"><i class="fa-solid fa-paper-plane"></i></button>
-      </form>
-    </div>
-  </div>
 
   <!-- RESUME MODAL VIEWER -->
   <div class="modal-backdrop" id="resumeModal">
